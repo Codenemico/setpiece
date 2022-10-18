@@ -12,5 +12,4 @@ spacebar - next scene
 arrow left - previous scene
 
 Audio:
-* Song set to autoplay
 1 - Loons
