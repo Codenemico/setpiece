@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+	<title>SetPiece</title>
+<link href='css/style.css' rel='stylesheet' type='text/css'>
+<link href='css/jquery.mb.bgndgallery.min.css?build=2459' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script type="text/javascript" src="jquery.mb.bgndGallery.js?build=2459"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style>
+</style>
+
+	<script type="text/javascript">
+	var myGallery;
+
+	$( function() {
+
+		//Redefining the "zoom" effect
+		$.mbBgndGallery.effects.zoom = {
+			enter: {
+				scale: ( 1 + Math.random() * 2 ),
+				opacity: 0,
+				z: 100
+			},
+			exit: {
+				scale: ( 1 + Math.random() * 2 ),
+				opacity: 0,
+				z: 100
+			},
+			enterTiming: "ease-out",
+			exitTiming: "ease-in"
+		};
+
+		/**
+		 * Initialize the gallery
+		 * @type {mbBgndGallery}
+		 */
+		myGallery = new mbBgndGallery( {
+			containment: "body",
+			controls: "#controls",
+			grayScale: false,
+			shuffle: false,
+			preserveWidth: false,
+			//                filter: {grayscale: 100},
+			effect: "zoom",
+				images: [
+				"img/1.png",
+				"img/2.png",
+				"img/3.png",
+				"img/4.png",
+				"img/5.png",
+				"img/6.png",
+				"img/9.png",
+				"img/10.png",
+				"img/11.png",
+				"img/12.png",
+				"img/13.png",
+				"img/14.png",
+				"img/15.png",
+				"img/16.png",
+				"img/17.png",
+				"img/18.png",
+				"img/19.png",
+				"img/20.png",
+				"img/21.png",
+				"img/22.png",
+				"img/23.png",
+				"img/25.png",
+				"img/26.png",
+				"img/27.png",
+				"img/29.png",
+				"img/30.png",
+				"img/31.png",
+				"img/32.png",
+				"img/33.png",
+				"img/34.png",
+				"img/35.png",
+				"img/36.png",
+				"img/37.png",
+				"img/38.png",
+				"img/39.png",
+				"img/40.png",
+				"img/42.png",
+			],
+
+			onStart: function() {},
+			onPause: function() {},
+			onPlay: function( opt ) {},
+			onChange: function( opt, idx ) {},
+			onNext: function( opt ) {},
+			onPrev: function( opt ) {}
+		} );
+
+	} );
+	</script>
+</head>
+<body>
+
+<!--AUDIO-->
+
+<!-- <audio autoplay>
+<source src="sounds/hometheme.wav">
+</audio> -->
+
+    <div data-key="49"></div>
+
+    <div data-key="50"></div>
+
+
+    <div data-key="68" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd></kbd>
+      <span class="sound"></span>
+    </div>
+
+
+  <audio data-key="49" src="sounds/loons.wav"></audio>
+  <audio data-key="50" src="sounds/ghost.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio>
+
+<script src="audio.js"></script>
+
+
+<!--PRECIPITATION-->
+
+<canvas id="snowing" class="snow" style="display:none"></canvas>
+<script type="text/javascript" src="snow.js"></script>
+
+<!-- <section class="rain"></section>
+<script type="text/javascript" src="rain.js"></script> -->
+
+<script>
+	$("body").click(function(){
+		$("#snowing").fadeIn(8000);});
+	$("body").dblclick(function(){
+		$("#snowing").fadeOut(8000);});
+
+
+</script>
+
+<!--NIGHT AND DAY-->
+
+
+<div class="moon"><img src="img/moon.png"></img></div>
+
+<span class="star"></span>
+
+<script>
+$(document).keyup(function(e) {
+   if(e.keyCode == 78){
+   		$(".mbBgndGallery").fadeTo(2500, 0.2);
+   		$(".moon").fadeIn(10000);}});
+
+$(document).keyup(function(e){
+   if(e.keyCode == 83){
+          $(".star, .star:after").css("display", "block");
+          $(".star").fadeOut(1500);}});
+
+$(document).keyup(function(e){
+	if(e.keyCode == 68){
+		$(".mbBgndGallery").fadeTo(2500, 1.0);
+		$(".moon").fadeOut(10000);}})
+</script>
+
+
+</body>
+</html>
