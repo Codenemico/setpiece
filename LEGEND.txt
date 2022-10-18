@@ -1,0 +1,16 @@
+LEGEND
+
+Scenes:
+
+Single Click - Start Snow
+Double Click - Stop Snow
+n - fade to night
+d - fade to day
+s - fire shooting star
+arrow right - next scene
+spacebar - next scene
+arrow left - previous scene
+
+Audio:
+* Song set to autoplay
+1 - Loons
